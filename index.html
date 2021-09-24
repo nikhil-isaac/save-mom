@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<!-- Resets all default browser stylings for a clean slate -->
+    <link rel="stylesheet" href="css/reset_author_nikhil_isaac.css">
+    <!-- Styles specific to this application -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- WebGL wrapper library -->
+	<script type="text/javascript" src="js/external/three.js"></script>
+	<!-- Allows for keyboard listeners -->
+	<script type="text/javascript" src="js/external/threex.keyboardstate.js"></script>
+	<!-- Help Menu -->
+	<script type="text/javascript" src="js/external/dat.gui.min.js"></script>
+	<!-- Generates two cameras (1st POV and HUD) and maintains their movements -->
+	<script type="text/javascript" src="js/camera.js"></script>
+	<!-- Functionality for enemies' movements and decision making -->
+	<script type="text/javascript" src="js/enemy.js"></script>
+	<!-- Updates elements in a loop at approximately 60 times a second -->
+	<script type="text/javascript" src="js/update.js"></script>
+	<!-- Global variables -->
+	<script type="text/javascript" src="js/data.js"></script>
+	<!-- Loads all world objects -->
+	<script type="text/javascript" src="js/world.js"></script>
+	<!-- Starts the game (calling all loaders) and each new level -->
+	<script type="text/javascript" src="js/initialize.js"></script>
+	<!-- Player key press listener -->
+	<script type="text/javascript" src="js/controls.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+	<div id="mainview">
+		<div id="modal">
+			<p id="modalMessage">Hi, you are Dexter's mom</br></br>&nbsp;&nbsp;&nbsp;Your son Dexter has made a crazy invention which has teleported you to a video game dimension.</br></br>&nbsp;&nbsp;&nbsp;The video game has 2 level and you need to complete all the 2 to get out of the game.</br></br>&nbsp;&nbsp;&nbsp;There is no other way to escape out of the game other than winning the game</br></br>&nbsp;&nbsp;&nbsp;At each level you need to complete a maze where monsters can kill you and so make sure you don't come across any of them. Use the radar device on the bottom-left to avoid them. Best of Luck!:)</p>
+			<button onclick="turnOffModal()">CONTINUE</button>
+		</div>
+		<div id="HUD-timer">
+			<div id="timer-container">
+				<h4>CLOCK</h4>
+				<div id="minutes" class="time"></div>
+				<div id="seconds" class="time"></div>
+			</div>
+		</div>
+		<div id="HUD-center">
+			<div id="Hearts-level" class="mission-details">
+				<h4>HEARTS</h4>
+				<p><span id="Hearts-level-amount">0</span> / <span id="Hearts-level-total">0</span></p>
+			</div>
+			<div id="Hearts-collected" class="mission-details">
+				<h4>TOTAL</h4>
+				<p><span id="Hearts-collected-amount">0</span></p>
+			</div>
+		</div>
+		<div id="HUD-level">
+			<h4>LEVEL</h4>
+			<p><span id="level-number">-1</span> / <span id="total-levels">1</span></p>
+		</div>
+		<div id="HUD-legend">
+			<div id="legend-container">
+				<h4>KEYS</h4>
+				<p><span class="left">LEFT</span><span class="right">A, left</span></p>
+				<p><span class="left">RIGHT</span><span class="right">D, right</span></p>
+				<p><span class="left">UP</span><span class="right">W, up</span></p>
+				<p><span class="left">BACK</span><span class="right">S, down</span></p>
+				<p><span class="left">TURN</span><span class="right">combine</span></p>
+				<p><span class="left">&nbsp;&nbsp;&nbsp;&nbsp;&amp;</span><span class="right">above&nbsp;&nbsp;</span></p>
+				<p><span class="left">MOVE</span><span class="right">keys&nbsp;&nbsp;&nbsp;</span></p>
+			</div>
+		</div>
+	</div>
+	<div id="miniMapView"></div>
+</div>
+
+<script>window.onload = init;</script>
+
+<iframe id="frmFile" src="assets/files/TemporaryDictionaryFiltered.txt" onload="LoadFile();" style="display: none;"></iframe>
+</body>
+
+</html>
